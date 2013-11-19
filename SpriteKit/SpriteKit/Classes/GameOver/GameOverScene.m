@@ -9,6 +9,8 @@
 #import "GameOverScene.h"
 #import "GameScene.h"
 
+NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
+
 @interface GameOverScene ()
 
 @property (nonatomic, strong) UITapGestureRecognizer* tap;
@@ -34,20 +36,34 @@
         }
         
         NSInteger score = (zombieKilled * 10) - cranberriesShooted + (won ? 100 : 0);
+        NSInteger highScore = [[NSUserDefaults standardUserDefaults] integerForKey:kGameOverHighScoreKey];
+        
+        if (score > highScore)
+        {
+            [[NSUserDefaults standardUserDefaults] setInteger:score forKey:kGameOverHighScoreKey];
+            highScore = score;
+        }
         
         SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         label.text = message;
         label.fontSize = 40;
         label.fontColor = [UIColor whiteColor];
-        label.position = CGPointMake(self.size.width/2, self.size.height/2);
+        label.position = CGPointMake(self.size.width/2, self.size.height - 80);
         [self addChild:label];
         
         SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        scoreLabel.text = [NSString stringWithFormat:@"score : %i", score];
+        scoreLabel.text = [NSString stringWithFormat:@"score : %i - high score : %i", score, highScore];
         scoreLabel.fontSize = 20;
         scoreLabel.fontColor = [UIColor whiteColor];
-        scoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2 - 50);
+        scoreLabel.position = CGPointMake(self.size.width/2, self.size.height - 180);
         [self addChild:scoreLabel];
+        
+        SKLabelNode *detailsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        detailsLabel.text = [NSString stringWithFormat:@"zombies tués : %i - cranberries shootées : %i", zombieKilled, cranberriesShooted];
+        detailsLabel.fontSize = 12;
+        detailsLabel.fontColor = [UIColor whiteColor];
+        detailsLabel.position = CGPointMake(self.size.width/2, self.size.height - 200);
+        [self addChild:detailsLabel];
     }
     return self;
 }
@@ -58,7 +74,7 @@
     startNewGameLabel.text = @"Nouvelle partie";
     startNewGameLabel.fontSize = 15;
     startNewGameLabel.fontColor = [UIColor whiteColor];
-    startNewGameLabel.position = CGPointMake(self.size.width/2, 20);
+    startNewGameLabel.position = CGPointMake(self.size.width/2, 40);
     startNewGameLabel.alpha = 0;
     [self addChild:startNewGameLabel];
     

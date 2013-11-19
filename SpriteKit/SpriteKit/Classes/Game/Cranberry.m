@@ -42,7 +42,7 @@ static CGFloat const kCranberryDistance = 1000.0;
     CGPoint shootAmount = skpMultiply(direction, kCranberryDistance);
     CGPoint target = skpAdd(shootAmount, self.position);
     
-    float duration = ((SKScene*)self.parent).size.width / kCranberryVelocity;
+    float duration = self.scene.size.width / kCranberryVelocity;
     
     SKAction * actionMove = [SKAction moveTo:target duration:duration];
     SKAction * actionMoveDone = [SKAction removeFromParent];

@@ -24,6 +24,8 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
 @property (nonatomic, assign) NSInteger killedZombies;
 @property (nonatomic, assign) NSInteger shootedCranberries;
 
+@property (nonatomic, strong) SKNode* gameNode;
+
 @end
 
 @implementation GameScene
@@ -42,6 +44,14 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
         
         self.physicsWorld.gravity = CGVectorMake(0,0);
         self.physicsWorld.contactDelegate = self;
+        
+        self.gameNode = [SKNode node];
+        [self addChild:self.gameNode];
+        
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"particle" ofType:@"sks"];
+        SKEmitterNode* emitter = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        emitter.particlePosition = CGPointMake(size.width/2, size.height);
+        [self addChild:emitter];
     }
     return self;
 }
@@ -85,8 +95,9 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
     int y = (arc4random() % rangeY) + zombie.size.height / 2;
     
     zombie.position = CGPointMake(self.frame.size.width + zombie.size.width/2, y);
+    zombie.zPosition = self.frame.size.height - y;
     
-    [self addChild:zombie];
+    [self.gameNode addChild:zombie];
     
     CGFloat minDuration = MAX(2.0, 4.0 - ((self.killedZombies / 3) * 0.1));
     CGFloat duration = (arc4random() % 2) + minDuration;
@@ -106,7 +117,7 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
         Cranberry* cranberry = [Cranberry node];
         cranberry.position = CGPointMake(0, self.frame.size.height / 2);
         
-        [self addChild:cranberry];
+        [self.gameNode addChild:cranberry];
         
         [cranberry shootToPoint:location];
     }

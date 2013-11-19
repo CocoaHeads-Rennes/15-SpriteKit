@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A2EDA1D183B574200F9EC2B /* particle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A2EDA1B183B574200F9EC2B /* particle.sks */; };
+		9A2EDA1E183B574200F9EC2B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2EDA1C183B574200F9EC2B /* spark.png */; };
 		9ACC6B231837940300A79374 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACC6B221837940300A79374 /* Foundation.framework */; };
 		9ACC6B251837940300A79374 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACC6B241837940300A79374 /* CoreGraphics.framework */; };
 		9ACC6B271837940300A79374 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACC6B261837940300A79374 /* UIKit.framework */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A2EDA1B183B574200F9EC2B /* particle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particle.sks; sourceTree = "<group>"; };
+		9A2EDA1C183B574200F9EC2B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		9ACC6B1F1837940300A79374 /* SpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACC6B221837940300A79374 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9ACC6B241837940300A79374 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -186,6 +190,8 @@
 				9ACC6B611837A74900A79374 /* cranberry.png */,
 				9ACC6B691837C4BD00A79374 /* zombieHeadShot.atlas */,
 				9ACC6B5F18379AA600A79374 /* zombie.atlas */,
+				9A2EDA1B183B574200F9EC2B /* particle.sks */,
+				9A2EDA1C183B574200F9EC2B /* spark.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -306,12 +312,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ACC6B2F1837940300A79374 /* InfoPlist.strings in Resources */,
+				9A2EDA1E183B574200F9EC2B /* spark.png in Resources */,
 				9ACC6B6C1837D73E00A79374 /* street.png in Resources */,
 				9ACC6B421837940400A79374 /* Images.xcassets in Resources */,
 				9ACC6B621837A74900A79374 /* cranberry.png in Resources */,
 				9ACC6B6A1837C4BD00A79374 /* zombieHeadShot.atlas in Resources */,
 				9ACC6B381837940300A79374 /* Main.storyboard in Resources */,
 				9ACC6B6018379AA600A79374 /* zombie.atlas in Resources */,
+				9A2EDA1D183B574200F9EC2B /* particle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

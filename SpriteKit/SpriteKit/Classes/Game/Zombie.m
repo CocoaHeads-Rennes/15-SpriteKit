@@ -63,7 +63,6 @@ static CGFloat const kZombieBlendFactor = 0.2;
     
     UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(-5, 5, 10, 20)];
     
-//    zombie.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:zombie.size];
     zombie.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path.CGPath];
     zombie.physicsBody.dynamic = YES;
     zombie.physicsBody.categoryBitMask = zombieCategory;
@@ -86,7 +85,7 @@ static CGFloat const kZombieBlendFactor = 0.2;
     
     SKAction * actionMove = [SKAction moveTo:point duration:duration];
     SKAction * loseAction = [SKAction runBlock:^{
-        [(GameScene*)self.parent gameOverWithSuccess:NO];
+        [(GameScene*)self.scene gameOverWithSuccess:NO];
     }];
     SKAction * actionMoveDone = [SKAction removeFromParent];
     
@@ -100,6 +99,7 @@ static CGFloat const kZombieBlendFactor = 0.2;
     headShot.color = kZombieBlendColor;
     headShot.colorBlendFactor = kZombieBlendFactor;
     headShot.position = CGPointMake(self.position.x, self.position.y + 10);
+    headShot.zPosition = self.zPosition;
     
     [self.parent addChild:headShot];
     
