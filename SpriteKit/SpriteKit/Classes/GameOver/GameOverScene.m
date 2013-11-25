@@ -28,7 +28,7 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
         NSString * message = nil;
         if (won)
         {
-            message = @"You Won!";
+            message = @"You Won !";
         }
         else
         {
@@ -44,21 +44,21 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
             highScore = score;
         }
         
-        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:kFontName];
         label.text = message;
         label.fontSize = 40;
         label.fontColor = [UIColor whiteColor];
         label.position = CGPointMake(self.size.width/2, self.size.height - 80);
         [self addChild:label];
         
-        SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
         scoreLabel.text = [NSString stringWithFormat:@"score : %i - high score : %i", score, highScore];
         scoreLabel.fontSize = 20;
         scoreLabel.fontColor = [UIColor whiteColor];
         scoreLabel.position = CGPointMake(self.size.width/2, self.size.height - 180);
         [self addChild:scoreLabel];
         
-        SKLabelNode *detailsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        SKLabelNode *detailsLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
         detailsLabel.text = [NSString stringWithFormat:@"zombies tués : %i - cranberries shootées : %i", zombieKilled, cranberriesShooted];
         detailsLabel.fontSize = 12;
         detailsLabel.fontColor = [UIColor whiteColor];
@@ -70,7 +70,7 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
 
 - (void)didMoveToView:(SKView*)view
 {
-    SKLabelNode *startNewGameLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    SKLabelNode *startNewGameLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
     startNewGameLabel.text = @"Nouvelle partie";
     startNewGameLabel.fontSize = 15;
     startNewGameLabel.fontColor = [UIColor whiteColor];
@@ -78,11 +78,14 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
     startNewGameLabel.alpha = 0;
     [self addChild:startNewGameLabel];
     
-    SKAction* sequence = [SKAction sequence:@[[SKAction waitForDuration:2.0], [SKAction runBlock:^{
+    SKAction* waitAction = [SKAction waitForDuration:2.0];
+    SKAction* blockAction = [SKAction runBlock:^{
         self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         [self.view addGestureRecognizer:self.tap];
-    }], [SKAction fadeAlphaTo:1 duration:1]]];
+    }];
+    SKAction* fadeAction = [SKAction fadeAlphaTo:1 duration:1];
     
+    SKAction* sequence = [SKAction sequence:@[waitAction, blockAction, fadeAction]];
     [startNewGameLabel runAction:sequence];
 }
 

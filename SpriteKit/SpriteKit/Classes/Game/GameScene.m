@@ -45,11 +45,24 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
         self.physicsWorld.gravity = CGVectorMake(0,0);
         self.physicsWorld.contactDelegate = self;
         
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, nil, -20, size.height / 2);
+        CGPathAddLineToPoint(path, nil, size.width, size.height);
+        CGPathAddLineToPoint(path, nil, size.width, 0);
+        CGPathCloseSubpath(path);
+        
+        SKShapeNode* shape = [SKShapeNode node];
+        shape.path = path;
+        shape.fillColor = [UIColor whiteColor];
+        shape.strokeColor = [UIColor clearColor];
+        shape.blendMode = SKBlendModeMultiplyX2;
+        [self addChild:shape];
+        
         self.gameNode = [SKNode node];
         [self addChild:self.gameNode];
         
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"particle" ofType:@"sks"];
-        SKEmitterNode* emitter = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        NSString* particlePath = [[NSBundle mainBundle] pathForResource:@"particle" ofType:@"sks"];
+        SKEmitterNode* emitter = [NSKeyedUnarchiver unarchiveObjectWithFile:particlePath];
         emitter.particlePosition = CGPointMake(size.width/2, size.height);
         [self addChild:emitter];
     }

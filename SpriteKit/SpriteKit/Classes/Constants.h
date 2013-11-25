@@ -11,3 +11,5 @@
 static uint32_t const cranberryCategory = 0x1 << 0;
 static uint32_t const zombieCategory = 0x1 << 1;
 
+static NSString* const kFontName = @"MarkerFelt-Thin";
+

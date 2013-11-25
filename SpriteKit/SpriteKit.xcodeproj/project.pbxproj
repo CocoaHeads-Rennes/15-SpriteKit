@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A2C201A184374B7000C4DCE /* LoadingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2C2019184374B7000C4DCE /* LoadingScene.m */; };
+		9A2C201C18437560000C4DCE /* cocoaheads@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2C201B18437560000C4DCE /* cocoaheads@2x.png */; };
 		9A2EDA1D183B574200F9EC2B /* particle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A2EDA1B183B574200F9EC2B /* particle.sks */; };
 		9A2EDA1E183B574200F9EC2B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2EDA1C183B574200F9EC2B /* spark.png */; };
 		9ACC6B231837940300A79374 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACC6B221837940300A79374 /* Foundation.framework */; };
@@ -46,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A2C2018184374B7000C4DCE /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
+		9A2C2019184374B7000C4DCE /* LoadingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScene.m; sourceTree = "<group>"; };
+		9A2C201B18437560000C4DCE /* cocoaheads@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cocoaheads@2x.png"; sourceTree = "<group>"; };
 		9A2EDA1B183B574200F9EC2B /* particle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particle.sks; sourceTree = "<group>"; };
 		9A2EDA1C183B574200F9EC2B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		9ACC6B1F1837940300A79374 /* SpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A2C20171843749F000C4DCE /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				9A2C2018184374B7000C4DCE /* LoadingScene.h */,
+				9A2C2019184374B7000C4DCE /* LoadingScene.m */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		9ACC6B161837940300A79374 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +198,7 @@
 		9ACC6B5E18379AA600A79374 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A2C201B18437560000C4DCE /* cocoaheads@2x.png */,
 				9ACC6B361837940300A79374 /* Main.storyboard */,
 				9ACC6B411837940400A79374 /* Images.xcassets */,
 				9ACC6B6B1837D73E00A79374 /* street.png */,
@@ -205,6 +220,7 @@
 				9ADB489618393BCA00899CE2 /* ViewController.m */,
 				9ADB488718393BCA00899CE2 /* Constants.h */,
 				9ADB489418393BCA00899CE2 /* Utils.h */,
+				9A2C20171843749F000C4DCE /* Loading */,
 				9ADB488818393BCA00899CE2 /* Game */,
 				9ADB488F18393BCA00899CE2 /* GameOver */,
 				9ADB489218393BCA00899CE2 /* SKSpriteNode+PhysicsDebug.h */,
@@ -315,6 +331,7 @@
 				9A2EDA1E183B574200F9EC2B /* spark.png in Resources */,
 				9ACC6B6C1837D73E00A79374 /* street.png in Resources */,
 				9ACC6B421837940400A79374 /* Images.xcassets in Resources */,
+				9A2C201C18437560000C4DCE /* cocoaheads@2x.png in Resources */,
 				9ACC6B621837A74900A79374 /* cranberry.png in Resources */,
 				9ACC6B6A1837C4BD00A79374 /* zombieHeadShot.atlas in Resources */,
 				9ACC6B381837940300A79374 /* Main.storyboard in Resources */,
@@ -343,6 +360,7 @@
 				9ADB489D18393BCA00899CE2 /* ViewController.m in Sources */,
 				9ADB489918393BCA00899CE2 /* GameScene.m in Sources */,
 				9ADB489C18393BCA00899CE2 /* SKSpriteNode+PhysicsDebug.m in Sources */,
+				9A2C201A184374B7000C4DCE /* LoadingScene.m in Sources */,
 				9ADB489818393BCA00899CE2 /* Cranberry.m in Sources */,
 				9ADB489B18393BCA00899CE2 /* GameOverScene.m in Sources */,
 				9ADB489A18393BCA00899CE2 /* Zombie.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "GameScene.h"
+#import "LoadingScene.h"
 
 @implementation ViewController
 
@@ -22,7 +22,7 @@
 //        skView.showsFPS = YES;
 //        skView.showsNodeCount = YES;
         
-        SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
+        SKScene* scene = [LoadingScene sceneWithSize:skView.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
         
         [skView presentScene:scene];
