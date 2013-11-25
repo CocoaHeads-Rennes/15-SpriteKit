@@ -14,7 +14,7 @@
 static NSArray* kZombieWalkingSprites = nil;
 static NSArray* kZombieHeadShotSprites = nil;
 
-static UIColor* kZombieBlendColor = nil;
+static SKColor* kZombieBlendColor = nil;
 static CGFloat const kZombieBlendFactor = 0.2;
 
 @interface Zombie ()
@@ -27,7 +27,7 @@ static CGFloat const kZombieBlendFactor = 0.2;
 {
     if (self == [Zombie class])
     {
-        kZombieBlendColor = [UIColor greenColor];
+        kZombieBlendColor = [SKColor greenColor];
         
         NSMutableArray* sprites = [[NSMutableArray alloc] init];
         

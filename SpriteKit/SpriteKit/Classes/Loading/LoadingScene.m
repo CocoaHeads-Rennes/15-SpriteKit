@@ -24,7 +24,7 @@
     self = [super initWithSize:size];
     if (self)
     {
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [SKColor lightGrayColor];
         
         self.logoSprite = [SKSpriteNode spriteNodeWithImageNamed:@"cocoaheads"];
         self.logoSprite.position = CGPointMake(self.logoSprite.size.width / 2, size.height / 2);
@@ -39,7 +39,7 @@
     SKLabelNode *startLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
     startLabel.text = @"Démarrer";
     startLabel.fontSize = 20;
-    startLabel.fontColor = [UIColor blackColor];
+    startLabel.fontColor = [SKColor blackColor];
     startLabel.position = CGPointMake(self.logoSprite.size.width + (self.size.width - self.logoSprite.size.width) / 2, self.size.height / 2);
     startLabel.alpha = 0;
     [self addChild:startLabel];

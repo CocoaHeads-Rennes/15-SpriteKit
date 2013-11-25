@@ -23,7 +23,7 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
 {
     if (self = [super initWithSize:size])
     {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [SKColor blackColor];
         
         NSString * message = nil;
         if (won)
@@ -47,21 +47,21 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
         SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:kFontName];
         label.text = message;
         label.fontSize = 40;
-        label.fontColor = [UIColor whiteColor];
+        label.fontColor = [SKColor whiteColor];
         label.position = CGPointMake(self.size.width/2, self.size.height - 80);
         [self addChild:label];
         
         SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
         scoreLabel.text = [NSString stringWithFormat:@"score : %i - high score : %i", score, highScore];
         scoreLabel.fontSize = 20;
-        scoreLabel.fontColor = [UIColor whiteColor];
+        scoreLabel.fontColor = [SKColor whiteColor];
         scoreLabel.position = CGPointMake(self.size.width/2, self.size.height - 180);
         [self addChild:scoreLabel];
         
         SKLabelNode *detailsLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
         detailsLabel.text = [NSString stringWithFormat:@"zombies tués : %i - cranberries shootées : %i", zombieKilled, cranberriesShooted];
         detailsLabel.fontSize = 12;
-        detailsLabel.fontColor = [UIColor whiteColor];
+        detailsLabel.fontColor = [SKColor whiteColor];
         detailsLabel.position = CGPointMake(self.size.width/2, self.size.height - 200);
         [self addChild:detailsLabel];
     }
@@ -73,7 +73,7 @@ NSString* const kGameOverHighScoreKey = @"kGameOverHighScoreKey";
     SKLabelNode *startNewGameLabel = [SKLabelNode labelNodeWithFontNamed:kFontName];
     startNewGameLabel.text = @"Nouvelle partie";
     startNewGameLabel.fontSize = 15;
-    startNewGameLabel.fontColor = [UIColor whiteColor];
+    startNewGameLabel.fontColor = [SKColor whiteColor];
     startNewGameLabel.position = CGPointMake(self.size.width/2, 40);
     startNewGameLabel.alpha = 0;
     [self addChild:startNewGameLabel];

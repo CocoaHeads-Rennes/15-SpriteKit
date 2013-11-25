@@ -34,11 +34,11 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
 {
     if (self = [super initWithSize:size])
     {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [SKColor blackColor];
         
         SKSpriteNode* street = [SKSpriteNode spriteNodeWithImageNamed:@"street"];
         street.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-        street.color = [UIColor blackColor];
+        street.color = [SKColor blackColor];
         street.colorBlendFactor = 0.3;
         [self addChild:street];
         
@@ -53,8 +53,8 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
         
         SKShapeNode* shape = [SKShapeNode node];
         shape.path = path;
-        shape.fillColor = [UIColor whiteColor];
-        shape.strokeColor = [UIColor clearColor];
+        shape.fillColor = [SKColor whiteColor];
+        shape.strokeColor = [SKColor clearColor];
         shape.blendMode = SKBlendModeMultiplyX2;
         [self addChild:shape];
         
@@ -138,15 +138,15 @@ static NSInteger const kGameSceneKilledZombiesToWin = 100;
 
 - (void)gameOverWithSuccess:(BOOL)success
 {
-    UIColor* fadeColor = nil;
+    SKColor* fadeColor = nil;
     
     if (success)
     {
-        fadeColor = [UIColor blackColor];
+        fadeColor = [SKColor blackColor];
     }
     else
     {
-        fadeColor = [UIColor redColor];
+        fadeColor = [SKColor redColor];
     }
     
     SKTransition *transition = [SKTransition fadeWithColor:fadeColor duration:0.5];

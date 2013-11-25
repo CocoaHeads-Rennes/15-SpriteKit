@@ -27,7 +27,7 @@
     debugNode.path = path.CGPath;
     debugNode.lineWidth = 0.05;
     
-    debugNode.fillColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.5];
+    debugNode.fillColor = [SKColor colorWithRed:0 green:1 blue:0 alpha:0.5];
 
     [self addChild:debugNode];
 }
